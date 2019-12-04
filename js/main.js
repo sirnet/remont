@@ -103,3 +103,16 @@
         $('.s-b-4').addClass('services__block--active');
         $('.bt-4').addClass('btn__services--active');
     });
+    
+    $('a[href*="#"]').click(function(){
+        elementClick = $(this).attr("href");
+        destination = $(elementClick).offset().top;
+        
+            $('html').animate({scrollTop: destination}, 1000);
+        return false;
+    });
+    
+     $(document).on("click", ".scrollup", function(e) {
+        e.preventDefault();
+        $('body, html').animate({scrollTop: 0}, 800);
+    });
